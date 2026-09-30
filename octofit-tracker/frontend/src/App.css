@@ -1,0 +1,268 @@
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.brand strong {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.primary-nav a {
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.primary-nav a.active {
+  border-color: var(--coral);
+  color: var(--ink);
+}
+
+.dashboard {
+  flex: 1;
+  padding: 96px 0 60px;
+}
+
+.dashboard-heading {
+  padding-bottom: 55px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.04;
+}
+
+h1 span {
+  color: var(--green);
+  font-style: italic;
+}
+
+.lead-copy {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.service-status {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  align-items: center;
+  column-gap: 10px;
+  max-width: 300px;
+  margin: 0 0 5px auto;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.service-status small {
+  grid-column: 2;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  grid-row: span 2;
+  border-radius: 50%;
+  background: #d5a43d;
+}
+
+.status-online .status-dot {
+  background: var(--green);
+}
+
+.status-offline .status-dot {
+  background: var(--coral);
+}
+
+.workspace-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.workspace-link {
+  min-height: 112px;
+  display: grid;
+  grid-template-columns: 48px 1fr 24px;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 18px 20px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.workspace-link + .workspace-link {
+  padding-left: 30px;
+  border-left: 1px solid var(--line);
+}
+
+.section-number {
+  color: var(--coral);
+  font-family: Georgia, serif;
+  font-size: 18px;
+}
+
+.workspace-link strong,
+.workspace-link small {
+  display: block;
+}
+
+.workspace-link strong {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.workspace-link small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.link-arrow {
+  color: var(--green);
+  font-size: 20px;
+  transition: transform 160ms ease;
+}
+
+.workspace-link:hover .link-arrow {
+  transform: translate(2px, -2px);
+}
+
+.section-page {
+  padding-top: 120px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 34px;
+  color: var(--green);
+  font-size: 13px;
+}
+
+.app-footer {
+  display: flex;
+  gap: 8px;
+  padding: 18px 0 22px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.app-footer span {
+  color: var(--coral);
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: calc(100% - 32px);
+  }
+
+  .app-header {
+    min-height: 76px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .brand img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .primary-nav {
+    gap: 22px;
+  }
+
+  .primary-nav a {
+    padding: 5px 0 8px;
+    font-size: 12px;
+  }
+
+  .dashboard {
+    padding-top: 58px;
+  }
+
+  .dashboard-heading {
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .service-status {
+    margin: 4px 0 0;
+  }
+
+  .workspace-links {
+    grid-template-columns: 1fr;
+  }
+
+  .workspace-link {
+    min-height: 94px;
+  }
+
+  .workspace-link + .workspace-link {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
